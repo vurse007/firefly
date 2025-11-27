@@ -1,0 +1,19 @@
+export default function AnimatedButton({ 
+  children, 
+  className = '', 
+  style = {},
+  onClick,
+  type = 'button'
+}) {
+  return (
+    <button
+      type={type}
+      onClick={onClick}
+      className={`mt-13 buy-btn slide-in ${className}`}
+      style={style}
+    >
+      {children}
+    </button>
+  );
+}
+
