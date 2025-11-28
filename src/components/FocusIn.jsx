@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'motion/react';
 
 export default function FocusIn({ 
@@ -9,10 +9,21 @@ export default function FocusIn({
   delay = 0,
   duration = 0.8,
   blurAmount = 10,
-  margin = '0px'
+  margin = '0px',
+  forceAnimate = false
 }) {
   const ref = useRef(null);
+  const [hasMounted, setHasMounted] = useState(false);
   const isInView = useInView(ref, { once: true, margin: margin });
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  // If forceAnimate is true, animate after mount (for above-the-fold content)
+  const shouldAnimate = forceAnimate 
+    ? hasMounted 
+    : (hasMounted && isInView);
 
   return (
     <motion.div
@@ -23,7 +34,7 @@ export default function FocusIn({
         filter: `blur(${blurAmount}px)`,
         willChange: 'filter, opacity'
       }}
-      animate={isInView ? { 
+      animate={shouldAnimate ? { 
         opacity: 1, 
         filter: 'blur(0px)'
       } : { 

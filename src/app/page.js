@@ -52,7 +52,7 @@ export default function Home() {
       <main className="relative z-10 h-screen px-8 flex items-center pt-10">
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="text-left">
-            <FocusIn delay={0} duration={0.8} margin="-100px">
+            <FocusIn delay={0} duration={0.8} margin="-100px" forceAnimate={true}>
               <AnimatedHeading className="text-5xl md:text-7xl">
                 Muscle Rehabilitation{" "}
                 <GradientText
@@ -67,18 +67,18 @@ export default function Home() {
               </AnimatedHeading>
             </FocusIn>
 
-            <FocusIn delay={0.1} duration={0.8} margin="-80px">
+            <FocusIn delay={0.1} duration={0.8} margin="-80px" forceAnimate={true}>
               <AnimatedText>
                 An all-new recovery sleeve powered by EMS technology.
               </AnimatedText>
             </FocusIn>
 
-            <FocusIn delay={0.2} duration={0.8} margin="-60px">
+            <FocusIn delay={0.2} duration={0.8} margin="-60px" forceAnimate={true}>
               <AnimatedButton>Buy Now</AnimatedButton>
             </FocusIn>
           </div>
           <div className="hidden lg:flex items-center justify-center">
-            <FocusIn delay={0.15} duration={0.8} margin="-90px">
+            <FocusIn delay={0.15} duration={0.8} margin="-90px" forceAnimate={true}>
               <TiltedCard
                 imageSrc="/IMG_4147.jpeg"
                 altText="Product Image"
