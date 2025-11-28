@@ -9,7 +9,7 @@ export default function AnimatedButton({
     <button
       type={type}
       onClick={onClick}
-      className={`mt-13 buy-btn slide-in ${className}`}
+      className={`mt-13 buy-btn ${className}`}
       style={style}
     >
       {children}

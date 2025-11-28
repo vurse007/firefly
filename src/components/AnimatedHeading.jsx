@@ -6,7 +6,7 @@ export default function AnimatedHeading({
 }) {
   return (
     <Component
-      className={`text-5xl font-light leading-none tracking-tight md:text-7xl slide-in text-[var(--text)] ${className}`}
+      className={`text-5xl font-light leading-none tracking-tight md:text-7xl text-[var(--text)] ${className}`}
       style={style}
     >
       {children}

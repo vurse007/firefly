@@ -16,7 +16,7 @@ export default function GradientText({
   return (
     <span
       className={`relative ${isInline ? 'inline-block' : 'mx-auto flex max-w-fit flex-row items-center justify-center'} font-medium transition-shadow duration-500 overflow-hidden cursor-pointer ${className}`}
-      style={style}>
+      style={{ ...style, verticalAlign: 'baseline', lineHeight: 'inherit' }}>
       {showBorder && (
         <div
           className="absolute inset-0 bg-cover z-0 pointer-events-none animate-gradient"
@@ -36,12 +36,13 @@ export default function GradientText({
         </div>
       )}
       <span
-        className="inline-block relative z-2 text-transparent bg-cover animate-gradient"
+        className="inline relative z-2 text-transparent bg-cover animate-gradient"
         style={{
           ...gradientStyle,
           backgroundClip: 'text',
           WebkitBackgroundClip: 'text',
-          backgroundSize: '300% 100%'
+          backgroundSize: '300% 100%',
+          lineHeight: 'inherit'
         }}>
         {children}
       </span>
